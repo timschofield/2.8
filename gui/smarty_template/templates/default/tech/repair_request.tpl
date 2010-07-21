@@ -1,5 +1,5 @@
 {{* Repair request input form. repair_request.tpl 2004-06-12 Elpidio Latorilla *}}
-{{* Used by /modules/tech/technik-reparatur-anfordern.php *}}
+{{* Used by /modules/tech/tech-repair-request.php *}}
 {{* Note: never rename the input, when redimensioning or repositioning it  *}}
 
 <ul>
@@ -19,7 +19,7 @@
 				{{* Note: never rename the input, when redimensioning or repositioning it  *}}
 				<input type="text" name="reporter" size="30" value="{{$sUserName}}">
 				<br>
-				{{$LDPersonnelNr}}:<br>
+				{{$LDstaffNr}}:<br>
 				{{* Note: never rename the input, when redimensioning or repositioning it  *}}
 				<input type="text" name="id" size="30" value=""><br>
 				{{$LDPhoneNr}}:<br>

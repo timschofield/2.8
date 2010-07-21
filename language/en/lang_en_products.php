@@ -255,12 +255,12 @@ $LDReport='Report';
 $LDWriteReport='Write report';
 $LDReportSent='The report was sent';
 $LDSend='Send';
-$LDPersonellNr='Personell Nr.';
+$LDstaffNr='staff Nr.';
 $LDResetAll='Reset all';
 $LDReporter='Reporter';
 
 $LDAlertName='Enter your name please!';
-$LDAlertPersonNr='Enter your personnel number please!';
+$LDAlertPersonNr='Enter your staff number please!';
 $LDAlertReport='Please write your report!';
 
 $LDOrderNrExists='The order number exists already! Please use a different number.';
@@ -298,4 +298,8 @@ $LDSupplyTxt='Suppliers list';
 $LDSupply='Supplier';
 $LDClickSelectSupplier='Select Supplier';
 $LDSelectSupplier='Select Supplier';
+
+$LDClose = 'Close';
+$LDBack = 'Back';
+$LDHelp = 'Help';
 ?>

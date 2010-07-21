@@ -29,8 +29,8 @@ require_once($root_path.'modules/dept_admin/model/class_department.php');
 $dept_obj=new Department;
 $dept_obj->preloadDept($dept_nr);
 
-require_once($root_path.'modules/personell_admin/model/class_personell.php');
-$pers_obj=new Personell;
+require_once($root_path.'modules/staff_admin/model/class_staff.php');
+$pers_obj=new staff;
 $pers_obj->useDutyplanTable();
 
 /************** resolve dept only *********************************/
@@ -157,7 +157,10 @@ function makefwdpath($path,$dpt,$mo,$yr,$saved)
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',$sTitle);
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
+ 
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('op_duty.php','plan','$rows')");
 

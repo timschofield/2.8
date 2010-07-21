@@ -119,7 +119,9 @@ $img_female=createComIcon($root_path,'spf.gif','0','',TRUE);
 # Toolbar title
 
  $smarty->assign('sToolbarTitle',$LDAppointments);
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
 # href for the  button
  $smarty->assign('pbHelp',"javascript:gethelp('appointment_show.php')");
 
@@ -187,7 +189,7 @@ $smarty->assign('sByDocHiddenInputs','<input type="submit" value="'.$LDShow.'">
 			<input type="hidden"  name="name_last" value="">
 			<input type="hidden"  name="name_first" value="">
 			<input type="hidden"  name="date_birth" value="">
-			<input type="hidden"  name="personnel_nr" value="">
+			<input type="hidden"  name="staff_nr" value="">
 			<input type="hidden"  name="currYear" value="'.$currYear.'">
 			<input type="hidden"  name="currMonth" value="'.$currMonth.'">
 			<input type="hidden"  name="currDay" value="'.$currDay.'">

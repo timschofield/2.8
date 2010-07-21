@@ -12,7 +12,7 @@ require($root_path.'include/helpers/inc_environment_global.php');
 */
 $lang_tables[]='departments.php';
 define('LANG_FILE','nursing.php');
-$local_user='ck_edv_user';
+$local_user='ck_admin_user';
 require_once($root_path.'include/helpers/inc_front_chain_lang.php');
 /* Load the ward object */
 require_once($root_path.'include/core/class_ward.php');
@@ -69,7 +69,9 @@ if($mode){
 # Added for the common header top block
 
  $smarty->assign('sToolbarTitle',"$LDCreate::$LDNewStation");
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
  $smarty->assign('pbHelp',"javascript:gethelp('nursing_ward_mng.php','new')");
 
  # href for close button

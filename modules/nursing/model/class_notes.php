@@ -4,7 +4,7 @@
 */
 /**
 */
-require_once($root_path.'include/core/class_core.php');
+require_once(CARE_BASE.'include/core/class_core.php');
 
 /**
 *  Notes methods.
@@ -63,8 +63,8 @@ class Notes extends Core {
 									'short_notes',
 									'aux_notes',
 									'ref_notes_nr',
-									'personell_nr',
-									'personell_name',
+									'staff_nr',
+									'staff_name',
 									'send_to_pid',
 									'send_to_name',
 									'date',

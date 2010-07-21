@@ -1,5 +1,5 @@
 {{* Repair report input form. repair_report.tpl 2004-06-12 Elpidio Latorilla *}}
-{{* Used by /modules/tech/technik-reparatur-melden.php *}}
+{{* Used by /modules/tech/tech-reparatur-melden.php *}}
 {{* Note: never rename the input, when redimensioning or repositioning it  *}}
 
 <ul>
@@ -21,7 +21,7 @@
 				{{$LDTechnician}}:<br>
 				{{* Note: never rename the input, when redimensioning or repositioning it  *}}
 				<input type="text" name="reporter" size=30 ><p>
-				{{$LDPersonnelNr}}:<br>
+				{{$LDstaffNr}}:<br>
 				{{* Note: never rename the input, when redimensioning or repositioning it  *}}
 				<input type="text" name="id" size=30>
 			</td>

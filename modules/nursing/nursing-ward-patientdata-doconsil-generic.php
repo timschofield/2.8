@@ -220,7 +220,10 @@ $medical_depts=$dept_obj->getAllActiveSort( 'name_formal' );
 # Added for the common header top block
 
  $smarty->assign('sToolbarTitle',$LDDiagnosticTest);
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
+ 
  # Prepare start new form button and href
  if($user_origin=='lab' && $edit){
 	$smarty->assign('pbAux1',$thisfile.URL_APPEND."&station=$station&user_origin=$user_origin&status=$status&target=$target&noresize=$noresize");
@@ -433,7 +436,7 @@ elseif(!$read_form && !$no_proc_assist)
 <?php
 
         if($edit){
-		   echo '<img src="'.$root_path.'main/imgcreator/barcode_label_single_large.php'.URL_REDIRECT_APPEND.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>';
+		   echo '<img src="'.$root_path.'include/imgcreator/barcode_label_single_large.php'.URL_REDIRECT_APPEND.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>';
 		}elseif($pn==''){
 		    $searchmask_bgcolor='#ffffff';
             include($root_path.'modules/laboratory/includes/inc_test_request_searchmask.php');

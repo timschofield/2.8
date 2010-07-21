@@ -313,7 +313,7 @@ $LDAlertNotSavedYet='The latest entry is not saved yet. Do you want to save firs
 $LDPhone='Phone';
 $LDBeeper='Beeper';
 $LDOn='on';
-$LDNoPersonList='The list of personnel is not yet created. Please create the list first.';
+$LDNoPersonList='The list of staff is not yet created. Please create the list first.';
 $LDNoEntryFound='No entry in plan found!';
 $LDShow='Show';
 $LDShowPrevLog='Show the previous log entries';
@@ -339,4 +339,8 @@ $LDPlsSelectDept='Please select a department.';
 $LDSelectORoomNr='...and an OP Room.';
 $LDAlertNoDeptSelected=$LDPlsSelectDept;
 $LDAlertNoORSelected='Please select an operating room!';
+
+$LDClose = 'Close';
+$LDBack = 'Back';
+$LDHelp = 'Help';
 ?>

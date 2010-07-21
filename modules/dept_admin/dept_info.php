@@ -14,7 +14,7 @@ $lang_tables[]='departments.php';
 $lang_tables[]='phone.php';
 $lang_tables[]='doctors.php';
 define('LANG_FILE','edp.php');
-$local_user='ck_edv_user';
+$local_user='ck_admin_user';
 require_once($root_path.'include/helpers/inc_front_chain_lang.php');
 require_once($root_path.'modules/dept_admin/model/class_department.php');
 
@@ -54,7 +54,9 @@ if(isset($$dept['LD_var'])&&!empty($$dept['LD_var'])) $sTitle = $sTitle.$$dept['
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',$sTitle);
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('dept_info.php')");
 

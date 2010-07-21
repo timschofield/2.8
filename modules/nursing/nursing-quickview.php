@@ -117,7 +117,9 @@ $dbtable='care_ward';
 
  $smarty->assign('sToolbarTitle',$LDNursing );
  $smarty->assign('Subtitle',$LDQuickView ); // Nursing-Subtitle (header_toblock.tpl)  
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
  # Added for the common header top block
  $smarty->assign('pbHelp','javascript:gethelp(\'nursing_how2search.php\',\'\','.$rows.',\'quick\',\'\')');
 
@@ -282,8 +284,12 @@ $dbtable='care_ward';
  * IF ($from == "arch")
  */
  $smarty->assign('from',$from);
- $smarty->assign('LINKArchiv','nursing-ward-archiv.php'.URL_APPEND.'&pyear='.$pyear.'&pmonth='.$pmonth);
+ $smarty->assign('LINKArchiv','nursing-ward-archive.php'.URL_APPEND.'&pyear='.$pyear.'&pmonth='.$pmonth);
  $smarty->assign('pbBack2',createLDImgSrc($root_path,'back2.gif','0') );
+ $smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
+ 
  /* ELSE */
  $smarty->assign('pbClose2',createLDImgSrc($root_path,'close2.gif','0') );
  $smarty->assign('breakfile',$breakfile);

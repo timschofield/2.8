@@ -11,8 +11,8 @@ $LDTechInfo='Technical information';
 
 $LDReRepair='Request repair support';
 $LDReRepairTxt='Report damage, compose and send request for a repair service.';
-$LDRepabotActivate='Activate Repabot';
-$LDRepabotActivateTxt='A robot for automatic reception of repair job requests.';
+$LDRepairbotActivate='Activate Repairbot';
+$LDRepairbotActivateTxt='A robot for automatic reception of repair job requests.';
 $LDRepairReport='Report repair';
 $LDRepairReportTxt='Report finished repair jobs.';
 $LDReportsArchive='Reports archive';
@@ -30,14 +30,14 @@ $LDSendInquiry='Send inquiry';
 $LDReset='Reset';
 $LDRepairArea='Localization of the damage';
 $LDReporter='Requested by';
-$LDPersonnelNr='Personnel nr.';
+$LDstaffNr='staff nr.';
 $LDPhoneNr='Telephone nr. (for eventual inquiries)';
 $LDPlsDescribe='Please describe the nature of the damage';
 
 $LDAlertName='Please enter your name.';
 $LDAlertDept='Please enter your department or localisation of the damage.';
 $LDAlertDeptOnly='Please enter your department.';
-$LDAlertPNr='Please enter your personnel number.';
+$LDAlertPNr='Please enter your staff number.';
 $LDAck='Acknowledgement';
 $LDYour='Your';
 $LDReceived='was received on';
@@ -115,7 +115,7 @@ $queryindex[6]=' ';
 $LDMarkRead='Mark as Read.';
 $LDPrint='Print';
 $LDGoBack='Go Back';
-$LDImRepabot='I am the repabot';
+$LDImRepairbot='I am the Repairbot';
 $LDImQBot='I am the Q-Bot';
 $LDNewReport='The following is the newly arrived request for repair.';
 $LDNewReportMany='The following are the newly arrived requests for repair.';
@@ -155,4 +155,8 @@ $LDInfoCat[13]='Water Supply';
 $LDNoFound='I found nothing that corresponds to the search keyword. Please try it again and enter some more information.';
 /* 2003-02-11*/
 $LDCancel='Cancel';
+
+$LDClose = 'Close';
+$LDBack = 'Back';
+$LDHelp = 'Help';
 ?>

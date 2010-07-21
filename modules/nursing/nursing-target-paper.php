@@ -94,7 +94,10 @@ if($mode=='save'){
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle', $LDTarget.' :: '.$station.' ('.formatDate2Local($s_date,$date_format).')');
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
+ 
    # hide back button
  $smarty->assign('pbBack',FALSE);
 
@@ -124,7 +127,7 @@ if($mode=='save'){
 var n=false;
 function checkForm(f)
 {
-	if(f.notes.value==""||f.personell_name=="") return false;
+	if(f.notes.value==""||f.staff_name=="") return false;
 	 else return true;
 }
 function setChg()
@@ -181,7 +184,7 @@ if($occup){
 		if(!empty($row['short_notes'])) echo '<br>[ '.deactivateHotHtml($row['short_notes']).' ]';
 	?>
 	</td>
-    <td><?php if($row['personell_name']) echo $row['personell_name']; ?></td>
+    <td><?php if($row['staff_name']) echo $row['staff_name']; ?></td>
   </tr>
 
 <?php
@@ -434,7 +437,7 @@ Reperti <select name='reperti_muscolare'><option name='Si'<?php if (($occup)&&($
 Reperti <select name='reperti_nervoso'><option name='Si'<?php if (($occup)&&($row['reperti_nervoso']=="Si")) echo "selected"; ?>>Si</option><option name='No' <?php if (($occup)&&($row['reperti_nervoso']=="No")) echo "selected"; ?>>No</option></select><br>
 
 
-<input type="text" name="personell_name" size=60 maxlength=60 value="<?php echo $_SESSION['sess_user_name']; ?>" readonly>
+<input type="text" name="staff_name" size=60 maxlength=60 value="<?php echo $_SESSION['sess_user_name']; ?>" readonly>
 <input type="hidden" name="sid" value="<?php echo $sid ?>">
 <input type="hidden" name="lang" value="<?php echo $lang ?>">
 <input type="hidden" name="station" value="<?php echo $station ?>">

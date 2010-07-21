@@ -47,7 +47,7 @@ if($enc_obj->loadEncounterData($pn)){
 				$data_array['encounter_nr']=$pn;
 				$data_array['date']=$date;
 				$data_array['time']=$time;
-				$data_array['personell_name']=$encoder;
+				$data_array['staff_name']=$encoder;
 				$enc_obj->saveDischargeNotesFromArray($data_array);
 			}
 			
@@ -109,7 +109,9 @@ if($enc_obj->loadEncounterData($pn)){
 # Toolbar title
 
  $smarty->assign('sToolbarTitle',$LDReleasePatient);
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
  # href for the return button
  $smarty->assign('pbBack',FALSE);
 
@@ -170,7 +172,7 @@ if(($mode=="release")&&($released)){
 }
 
 $smarty->assign('thisfile',$thisfile);
-$smarty->assign('sBarcodeLabel','<img src="'.$root_path.'main/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>');
+$smarty->assign('sBarcodeLabel','<img src="'.$root_path.'include/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>');
 $smarty->assign('img_source','<img '.$img_source.' align="top">');
 $smarty->assign('LDLocation',"$LDClinic/$LDDept");
 $smarty->assign('sLocation',$dept);

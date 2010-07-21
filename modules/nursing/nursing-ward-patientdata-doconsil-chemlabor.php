@@ -322,7 +322,10 @@ if(!isset($edit)) $edit=FALSE;
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle', "$LDDiagnosticTest :: $LDCentralLab");
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
+ 
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('request_chemlab.php','$pn')");
 
@@ -834,7 +837,7 @@ if($edit){
 
       if($edit)
         {
-		    echo '<img src="'.$root_path.'main/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>';
+		    echo '<img src="'.$root_path.'include/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>';
 		}
         elseif(empty($pn))
 		{

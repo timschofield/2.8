@@ -241,7 +241,9 @@ $enc_obj=new Encounter;
 # Title in toolbar
 
  $smarty->assign('sToolbarTitle',"$LDDiagnosticTest ::  $formtitle");
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
  if($user_origin=='lab' && $edit){
 	$smarty->assign('pbAux1',$thisfile."?sid=$sid&lang=$lang&station=$station&user_origin=$user_origin&status=$status&target=patho&noresize=$noresize");
 	$smarty->assign('gifAux1',createLDImgSrc($root_path,'newpat2.gif','0') );
@@ -378,7 +380,7 @@ if($edit){
 }
 
 if($edit){
-	$smarty->assign('barcode_label_single_large','<img src="'.$root_path.'main/imgcreator/barcode_label_single_large.php'.URL_REDIRECT_APPEND.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>');
+	$smarty->assign('barcode_label_single_large','<img src="'.$root_path.'include/imgcreator/barcode_label_single_large.php'.URL_REDIRECT_APPEND.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>');
 }elseif($pn==""){
 	$smarty->assign('show_searchmask',TRUE);
 	# Collect buffer output

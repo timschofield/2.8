@@ -308,7 +308,10 @@ define('_BATCH_NR_INIT_',30000000);
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle', "$LDDiagnosticTest :: $formtitle");
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
+ 
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('request_baclabor.php')");
 
@@ -622,7 +625,7 @@ if($edit){
                  /* The patient label */
  if($edit)
         {
-		   echo '<img src="'.$root_path.'main/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>';
+		   echo '<img src="'.$root_path.'include/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>';
 		}
         elseif($pn=="")
 		{

@@ -151,7 +151,10 @@ else{
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$DDC_title $station");
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
+ 
  # hide return button
  $smarty->assign('pbBack',FALSE);
 
@@ -256,7 +259,7 @@ ob_start();
 		'.nl2br($result[address]).'<p>
 		'.$station.'&nbsp;'.$result[kasse].' '.$result[kassename].'</div>';*/
 
-echo '<img src="'.$root_path.'main/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>';
+echo '<img src="'.$root_path.'include/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>';
 ?>
 </td>
 <td colspan=4 bgcolor="#99ccff"><div class=fva2_ml10>

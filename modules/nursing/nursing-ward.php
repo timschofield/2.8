@@ -100,9 +100,9 @@ if(($mode=='')||($mode=='fresh')){
 		$elem='duty_1_pnr';
 		if(SHOW_DOC_2) $elem.=',duty_2_pnr';
 			
-		# Create personnel object
-		include_once($root_path.'modules/personell_admin/model/class_personell.php');
-		$pers_obj=new Personell;
+		# Create staff object
+		include_once($root_path.'modules/staff_admin/model/class_staff.php');
+		$pers_obj=new staff;
 			
 		if($result=$pers_obj->getDOCDutyplan($ward_info['dept_nr'],$pyear,$pmonth,$elem)){
 			$duty1=&unserialize($result['duty_1_pnr']);
@@ -115,10 +115,10 @@ if(($mode=='')||($mode=='fresh')){
 		# Consider the early morning hours to belong to the past day
 		if(date('H.i')<DOC_CHANGE_TIME) $offset_day--;
 		if($pnr1=$duty1['ha'.$offset_day]){
-			$person1=&$pers_obj->getPersonellInfo($pnr1);
+			$person1=&$pers_obj->getstaffInfo($pnr1);
 		}
 		if(SHOW_DOC_2 && ($pnr2=$duty2['hr'.$offset_day])){
-			$person2=&$pers_obj->getPersonellInfo($pnr2);
+			$person2=&$pers_obj->getstaffInfo($pnr2);
 		}
 		#### End of routine to fetch doctors on duty
 	}else{
@@ -158,7 +158,10 @@ if(($mode=='')||($mode=='fresh')){
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle', "$LDStation  ".$ward_info['name']." $LDOccupancy (".formatDate2Local($s_date,$date_format,'','',$null='').")");
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
+ 
   # hide back button
  $smarty->assign('pbBack',FALSE);
 
@@ -439,7 +442,7 @@ if($ward_ok){
 			# If patient and edit show small color bars
 			if($is_patient&&$edit){
 			 	$smarty->assign('sMiniColorBars','<a href="javascript:getinfo(\''.$bed['encounter_nr'].'\')">
-			 		<img src="'.$root_path.'main/imgcreator/imgcreate_colorbar_small.php'.URL_APPEND.'&pn='.$bed['encounter_nr'].'" alt="'.$LDSetColorRider.'" align="absmiddle" border=0 width=80 height=18>
+			 		<img src="'.$root_path.'include/imgcreator/imgcreate_colorbar_small.php'.URL_APPEND.'&pn='.$bed['encounter_nr'].'" alt="'.$LDSetColorRider.'" align="absmiddle" border=0 width=80 height=18>
 			 		</a>');
 			}
 			
@@ -670,7 +673,7 @@ if($ward_ok){
 if($pday.$pmonth.$pyear<>date('dmY'))
 
 	$smarty->assign('sToArchiveLink','<p>
-			<a href="nursing-ward-archiv.php'.URL_APPEND.'">'.$LDClk2Archive.' <img '.createComIcon($root_path,'bul_arrowgrnlrg.gif','0','',TRUE).'></a>
+			<a href="nursing-ward-archive.php'.URL_APPEND.'">'.$LDClk2Archive.' <img '.createComIcon($root_path,'bul_arrowgrnlrg.gif','0','',TRUE).'></a>
 			<p>');
 
 $smarty->assign('pbClose','<a href="'.$breakfile.'"><img '.createLDImgSrc($root_path,'close2.gif','0','absmiddle').'></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp');

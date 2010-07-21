@@ -49,7 +49,10 @@ $target='entry';
 # Title in the toolbar
 
  $smarty->assign('sToolbarTitle',$LDPatientRegister);
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
+ 
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('submenu1.php','$LDPatientRegister')");
 
@@ -67,7 +70,7 @@ $target='entry';
 
 /* Create the tabs */
 $tab_bot_line='#66ee66';
-require('./gui_bridge/default/gui_tabs_patreg.php');
+require('gui_bridge/default/gui_tabs_patreg.php');
 
 
 require_once($root_path.'modules/registration_admission/model/class_gui_input_person.php');

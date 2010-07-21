@@ -1,5 +1,5 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/helpers/inc_environment_global.php');
 /**
@@ -38,7 +38,7 @@ $_SESSION['sess_user_origin']='registration';
 $_SESSION['sess_en']=0;
 
 # Create the person show GUI
-require_once($root_path.'include/core/modules/registration_admission/model/class_gui_person_show.php');
+require_once($root_path.'modules/registration_admission/model/class_gui_person_show.php');
 $person = & new GuiPersonShow;
 
 # Set PID to load the data
@@ -65,7 +65,10 @@ $death_date = $person->DeathDate();
 
 # Title in the toolbar
  $smarty->assign('sToolbarTitle',$LDPatientRegister);
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
+ 
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('submenu1.php','$LDPatientRegister')");
 

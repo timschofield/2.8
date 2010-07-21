@@ -48,8 +48,8 @@ $LDOrDocu='OR Documentation';
 $LDOrLogBook='OR nursing logbook';
 $LDOrNursing='OR nursing';
 $LDCreate='Create';
-$LDPersonList='Personnel list';
-$LDRepabotActivate='Activate Repabot';
+$LDPersonList='staff list';
+$LDRepairbotActivate='Activate Repairbot';
 $LDQBotActivate='Activate Q-Bot';
 
 $LDMedLab='Medical laboratory';
@@ -134,4 +134,8 @@ $LDRedList='Red List';
 #2003-11-22 EL
 $LDAdvancedSearch='Advanced search';
 $LDNewPerson='Register new person';
+
+$LDClose = 'Close';
+$LDBack = 'Back';
+$LDHelp = 'Help';
 ?>

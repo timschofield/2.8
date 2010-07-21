@@ -163,7 +163,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 					  AND enc.is_discharged=0
 					  AND enc.status NOT IN ('void','hidden','inactive','deleted')  ORDER BY ";
 
-			# Filter if it is personnel nr
+			# Filter if it is staff nr
 			if($oitem=='encounter_nr') $sql2.='enc.'.$oitem.' '.$odir;
 				else $sql2.='reg.'.$oitem.' '.$odir;
 				
@@ -228,9 +228,11 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
  $smarty = new smarty_care('common');
 
 # Title in the toolbar
- //$smarty->assign('sToolbarTitle',$LDPatientSearch);
  $smarty->assign('sToolbarTitle',"$LDAdmission :: $LDSearch");
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
+ 
  $smarty->assign('breakfile',$breakfile);
 
  # Window bar title

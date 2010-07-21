@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
 * @package care_api
 */
@@ -164,11 +165,15 @@ class GuiInputPerson {
 				if (trim($addr_str_nr)=='') { $errorstreetnr=1; $error++;}
 				if ($addr_citytown_nr&&(trim($addr_citytown_name)=='')) { $errortown=1; $error++;}
 				if ($sex=='') { $errorsex=1; $error++;}
+				//TODO: Check out if there is really insurance as mandatory field needed (comment by Robert)
+				/*
 				if($insurance_show) {
 					if(trim($insurance_nr) && (trim($insurance_firm_name)=='')) { $errorinsurancecoid=1; $error++;}
 				}
+				*/
 			}
-
+			//echo "amount of errors: $error";
+			//echo "errornamelast: $errornamelast <br> errornamefirst:$errornamefirst  <br> errordatebirth: $errordatebirth  <br>errorstreet: $errorstreet  <br> errorstreetnr: $errorstreetnr <br>errortown:  $errortown  <br> errorsex: $errorsex";
 
 			# If the validation produced no error, save the data
 			if(!$error) {
@@ -618,16 +623,12 @@ class GuiInputPerson {
 
 		if ($errorsex) $this->smarty->assign('LDSex', "<font color=#ff0000>* $LDSex</font>:");
 		else $this->smarty->assign('LDSex', "<font color=#ff0000>*</font> $LDSex:");
-
-		$sSexMBuffer='<input name="sex" type="radio" value="m"  ';
-		if($sex=="m") $sSexMBuffer.=' checked>';
-		else $sSexMBuffer.='>';
+		
+		$sSexMBuffer='<input name="sex" type="radio" value="m"  ';($sex=="m") ? $sSexMBuffer.=' checked>' : $sSexMBuffer.='>';
 		$this->smarty->assign('sSexM',$sSexMBuffer);
 		$this->smarty->assign('LDMale',$LDMale);
-
-		$sSexFBuffer ='<input name="sex" type="radio" value="f"  ';
-		if($sex=="f") $sSexFBuffer.='checked>';
-		else $sSexFBuffer.='>';
+		
+		$sSexFBuffer ='<input name="sex" type="radio" value="f"  ';($sex=="f") ? $sSexFBuffer.='checked>' : $sSexFBuffer.='>';
 		$this->smarty->assign('sSexF',$sSexFBuffer);
 		$this->smarty->assign('LDFemale',$LDFemale);
 
@@ -754,13 +755,15 @@ class GuiInputPerson {
 					if($insurance_classes!=false){
 						$sInsClassBuffer='';
 						while($result=$insurance_classes->FetchRow()) {
-
+							
+							$sInsClassBuffer.= '<label>';
 							$sInsClassBuffer.='<input class="reg_input_must" name="insurance_class_nr" type="radio"  value="'.$result['class_nr'].'" ';
 							if($insurance_class_nr==$result['class_nr']) $sInsClassBuffer.='checked';
 							$sInsClassBuffer.='>';
 
 							$LD=$result['LD_var'];
 							if(isset($$LD)&&!empty($$LD)) $sInsClassBuffer.=$$LD; else $sInsClassBuffer.=$result['name'];
+							$sInsClassBuffer.= '</label>';
 							$sInsClassBuffer.='&nbsp;';
 						}
 

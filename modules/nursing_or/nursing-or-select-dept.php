@@ -16,9 +16,9 @@ define('LANG_FILE','doctors.php');
 
 switch($_SESSION['sess_user_origin'])
 {
-	case 'personell_admin':
+	case 'staff_admin':
 		$local_user='aufnahme_user';
-		$breakfile=$root_path.'modules/personell_admin/personell_register_show.php'.URL_APPEND.'&target=personell_reg&personell_nr='.$nr;
+		$breakfile=$root_path.'modules/staff_admin/staff_register_show.php'.URL_APPEND.'&target=staff_reg&staff_nr='.$nr;
 		break;
 		
 	case 'calendar_opt':
@@ -60,7 +60,7 @@ $dept_DOC=$dept_obj->getAllActiveWithDOC();
 
 switch($target){
 	case 'plist': $title=$LDCreateNursesList;
-					  $fileforward='nursing-or-roster-personnel-list.php'.URL_APPEND.'&retpath='.$retpath;
+					  $fileforward='nursing-or-roster-staff-list.php'.URL_APPEND.'&retpath='.$retpath;
 					  break;
 	case 'calendar_opt': $title=$LDSelectDept;
 					  $fileforward=$root_path."modules/calendar/calendar-options.php".URL_APPEND."&year=$year&month=$month&day=$day";
@@ -83,7 +83,9 @@ switch($target){
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',$title);
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('dept_select.php')");
 

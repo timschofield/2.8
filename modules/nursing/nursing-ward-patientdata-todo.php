@@ -112,7 +112,10 @@ if($mode=='save'){
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDDocsPrescription $station");
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
+ 
  # hide return button
  $smarty->assign('pbBack',FALSE);
 
@@ -222,7 +225,7 @@ ob_start();
 		'.nl2br($result[address]).'<p>
 		'.$station.'&nbsp;'.$result[kasse].' '.$result[kassename].'</div>';*/
 
-echo '<img src="'.$root_path.'main/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>';
+echo '<img src="'.$root_path.'include/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>';
 		
 ?>
 </td>
@@ -264,8 +267,8 @@ if($cnt){
 			$buf['time']='';
 			$buf['eff_notes']=$buf['notes'];
 			$buf['notes']='';
-			$buf['eff_personell_name']=$buf['personell_name'];
-			$buf['personell_name']='';
+			$buf['eff_staff_name']=$buf['staff_name'];
+			$buf['staff_name']='';
 			$buf['eff_aux_notes']=$buf['aux_notes'];
 			$buf['aux_notes']='';
 		}
@@ -285,7 +288,7 @@ if($cnt){
 			echo str_replace('~','<span style="background:yellow">',$strbuf).'</i></div>
 			</td>
 			<td>
-			<div class=fa2_ml3>'.$buf['personell_name'].'</div>
+			<div class=fa2_ml3>'.$buf['staff_name'].'</div>
 			</td>';
 
 				// Column for the effectivity report
@@ -300,7 +303,7 @@ if($cnt){
 				echo str_replace('~','<span style="background:yellow">',$strbuf).'</i></div>
 				</td>
 				<td>
-				<div class=fa2_ml3>'.$buf['eff_personell_name'].'</div>
+				<div class=fa2_ml3>'.$buf['eff_staff_name'].'</div>
 				</td>';
 		echo'</tr>';	
 	}

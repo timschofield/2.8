@@ -12,11 +12,11 @@ $allowedarea=&$allow_area['wards'];
 
 $fileforward="dept_manage.php?sid=".$sid."&lang=".$lang;
 $thisfile=basename(__FILE__);
-$breakfile="edv.php?sid=".$sid."&lang=".$lang;
+$breakfile="admin.php?sid=".$sid."&lang=".$lang;
 
 $lognote="$LDNursingManage ok";
 
-$userck="ck_edv_user";
+$userck="ck_admin_user";
 
 //reset cookie;
 // reset all 2nd level lock cookies

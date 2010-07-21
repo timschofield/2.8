@@ -12,12 +12,12 @@ require($root_path.'include/helpers/inc_environment_global.php');
 */
 $lang_tables=array('departments.php');
 define('LANG_FILE','edp.php');
-$local_user='ck_edv_user';
+$local_user='ck_admin_user';
 require_once($root_path.'include/helpers/inc_front_chain_lang.php');
 require_once($root_path.'modules/dept_admin/model/class_department.php');
 require_once($root_path.'modules/news/includes/inc_editor_fx.php');
 
-$breakfile=$root_path.'modules/system_admin/edv-system-admi-welcome.php'.URL_APPEND	;
+$breakfile=$root_path.'modules/system_admin/admin_system-admi-welcome.php'.URL_APPEND	;
 
 if($pday=='') $pday=date('d');
 if($pmonth=='') $pmonth=date('m');
@@ -40,7 +40,9 @@ $deptarray=$dept_obj->getAllActiveSort('name_formal');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDDepartment :: $LDList");
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('dept_list.php')");
 

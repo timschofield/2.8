@@ -242,7 +242,10 @@ $enc_obj=new Encounter;
 # Added for the common header top block
 
  $smarty->assign('sToolbarTitle',$LDTestRequestFor.$LDTestType[$target]);
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
+ 
  # Prepare start new form button and href
  if($user_origin=='lab' && $edit){
 	$smarty->assign('pbAux1',$thisfile.URL_APPEND."&station=$station&user_origin=$user_origin&status=$status&target=$target&noresize=$noresize");
@@ -419,7 +422,7 @@ if($edit){
 		<!-- First row -->
         <tr bgcolor="<?php echo $bgc1 ?>">
 		<!-- <td rowspan=3><img src="../img/de/de_blood_wardfill.gif" border=0 width=27 height=492 align="absmiddle"></td> -->
-        <td rowspan=3><img src="<?php echo $root_path; ?>main/imgcreator/blood_lab_leftbar.php?sid=<?php echo $sid ?>&lang=<?php echo $lang ?>" border=0 width=27 height=492 align="absmiddle"></td>
+        <td rowspan=3><img src="<?php echo $root_path; ?>include/imgcreator/blood_lab_leftbar.php?sid=<?php echo $sid ?>&lang=<?php echo $lang ?>" border=0 width=27 height=492 align="absmiddle"></td>
 		<td width=50% bgcolor="<?php echo $bgc1 ?>"  class=fva2_ml10><div   class=fva2_ml10><?php echo $LDToBloodBank."</b></font><br>".$LDTelephone ?><br>
 <?php
 	  echo '<font size=1 color="#000099" face="verdana,arial">'.$batch_nr.'</font>&nbsp;<br>';
@@ -489,7 +492,7 @@ if($edit){
 <?php
 
 if($edit){
-	echo '<img src="'.$root_path.'main/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>';
+	echo '<img src="'.$root_path.'include/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>';
 }elseif($pn==''){
 	$searchmask_bgcolor='#ffffff';
 	include($root_path.'modules/laboratory/includes/inc_test_request_searchmask.php');
@@ -620,7 +623,7 @@ if($edit){
 	      <table border=0 cellspacing=1 width=100% height=100% align="left" cellpadding=0>
          <tr bgcolor="<?php echo $bgc1 ?>">
         <td  bgcolor="<?php echo $bgc1 ?>" rowspan=20 width=27>
-		<img src="<?php echo $root_path; ?>main/imgcreator/blood_lab_leftbar.php?sid=<?php echo $sid ?>&lang=<?php echo $lang ?>&form_bottom=1" border=0 width=27 height=492><br></td>
+		<img src="<?php echo $root_path; ?>include/imgcreator/blood_lab_leftbar.php?sid=<?php echo $sid ?>&lang=<?php echo $lang ?>&form_bottom=1" border=0 width=27 height=492><br></td>
            <td width=100 align="center"><font size=2 face="arial"><?php echo $LDPB ?><br><?php echo $LD350 ?></font></td>
            <td colspan=7>&nbsp;</td>
          </tr>

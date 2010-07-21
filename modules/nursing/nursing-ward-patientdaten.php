@@ -238,7 +238,10 @@ $fr=strtolower(str_replace('.','-',($result['encounter_nr'].'_'.$result['name_la
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDPatDataFolder $station");
-
+$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDHelp', $LDHelp);
+ $smarty->assign('LDClose', $LDClose);
+ 
  # hide return button
  $smarty->assign('pbBack',FALSE);
 
@@ -483,7 +486,7 @@ function rx(){
 		<tr><td>
 		<table cellpadding=3><tr><td><input type="button" onClick="javascript:enlargewin();window.location.href=\'nursing-ward-patientdata-custom-inout.php'.URL_REDIRECT_APPEND.'&station='.$station.'&pn='.$pn.'&edit='.$edit.'\'" value="'.$IO_title.'"></td>
 		<td><input type="button" onClick="javascript:enlargewin();window.location.href=\'nursing-ward-patientdata-custom-ddc.php'.URL_REDIRECT_APPEND.'&station='.$station.'&pn='.$pn.'&edit='.$edit.'\'" value="'.$DDC_title.'"></td>
-		<td><input type="button" onClick="javascript:enlargewin();window.location.href=\'nursing-ward-patientdata-kurve.php'.URL_REDIRECT_APPEND.'&station='.$station.'&dept_nr='.$dept_nr.'&pn='.$pn.'&edit='.$edit.'\'" value="'.$LDFeverCurve.'"></td>
+		<td><input type="button" onClick="javascript:enlargewin();window.location.href=\'nursing-ward-patientdata-graph.php'.URL_REDIRECT_APPEND.'&station='.$station.'&dept_nr='.$dept_nr.'&pn='.$pn.'&edit='.$edit.'\'" value="'.$LDFeverCurve.'"></td>
 		</tr>
 		<tr><td>
 		<input type="button" onClick="javascript:enlargewin();window.location.href=\'nursing-ward-patientdata-custom-tc.php'.URL_REDIRECT_APPEND.'&station='.$station.'&pn='.$pn.'&edit='.$edit.'\'" value="'.$TC_title.'"></td>
@@ -494,8 +497,8 @@ function rx(){
 		<tr><td bgcolor=333333><font color=white><b>'.$LDReports.'<b></font></td></tr>
 		<tr><td>
 		<table cellpadding=3><tr>
-		<td><input type="button" onClick="javascript:enlargewin();window.location.href=\'nursing-ward-patientdata-pbericht.php'.URL_REDIRECT_APPEND.'&station='.$station.'&pn='.$pn.'&edit='.$edit.'\'" value="'.$LDNursingReport.'"></td>
-		<td><input type="button" onClick="javascript:enlargewin();window.location.href=\''.$root_path.'main/diagnostics-report-start.php'.URL_REDIRECT_APPEND.'&station='.$station.'&pn='.$pn.'&edit='.$edit.'&header='.$result['name_last'].',+'.$result['name_first'].'+'.formatDate2Local($result['date_birth'],$date_format).'\'" value="'.$LDReports.'"></td>
+		<td><input type="button" onClick="javascript:enlargewin();window.location.href=\'nursing-ward-patientdata-report.php'.URL_REDIRECT_APPEND.'&station='.$station.'&pn='.$pn.'&edit='.$edit.'\'" value="'.$LDNursingReport.'"></td>
+		<td><input type="button" onClick="javascript:enlargewin();window.location.href=\'diagnostics-report-start.php'.URL_REDIRECT_APPEND.'&station='.$station.'&pn='.$pn.'&edit='.$edit.'&header='.$result['name_last'].',+'.$result['name_first'].'+'.formatDate2Local($result['date_birth'],$date_format).'\'" value="'.$LDReports.'"></td>
 		';
 		echo '<td><input type="button" onClick="javascript:window.location.href=\''.$root_path.'modules/laboratory/labor_datalist_noedit.php'.URL_REDIRECT_APPEND.'&station='.$station.'&pn='.$pn.'&user_origin='.$user_origin.'&edit='.$edit.'\'" value="'.$LDLabReports.'"></td>';
 		
@@ -563,7 +566,7 @@ echo '
 
 //..................... START...... PATIENT_INFO_IMAGE
 
-echo '<img src="'.$root_path.'main/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178 align="left" hspace=5 vspace=5>';
+echo '<img src="'.$root_path.'include/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178 align="left" hspace=5 vspace=5>';
 
 //..................... END....... PATIENT_INFO_IMAGE
 

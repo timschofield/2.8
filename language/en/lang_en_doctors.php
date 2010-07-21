@@ -65,7 +65,7 @@ $LDNewPlan='Create a new plan';
 $LDBack='Back';
 $LDHelp='Help';
 $LDMakeDutyPlan='Create dutyplan';
-$LDClk2Plan='Click to open personnel list';
+$LDClk2Plan='Click to open staff list';
 $LDInfo4Duty='Information';
 $LDStayIn='Stay-in duty';
 $LDOnCall='On call duty';
@@ -86,8 +86,8 @@ $LDPerElements[6]='Phone';
 
 $LDChgDept='Change department: ';
 $LDChange='Change';
-$LDCreatePersonList='Create a list for personnel';
-$LDNoPersonList='The list of personnel is not yet created. Please create the list first.';
+$LDCreatePersonList='Create a list for staff';
+$LDNoPersonList='The list of staff is not yet created. Please create the list first.';
 $LDShow='Show';
 
 $LDDOCS='DOC Scheduler';
@@ -107,8 +107,8 @@ $LDPlsClickButton='Click on the following button.';
 $LDFamilyName='Family name';
 $LDGivenName='Given name';
 $LDDateOfBirth='Date of birth';
-$LDEntryPrompt='Please enter a search keyword:(e.g. family name, given name, personnel number, etc.)';
-$LDPersonellNr='Personell Nr.';
+$LDEntryPrompt='Please enter a search keyword:(e.g. family name, given name, staff number, etc.)';
+$LDstaffNr='staff Nr.';
 $LDFunction='Function';
 $LDOptions='Options';
 $LDSearchFound='Search found ~nr~ relevant data.';
@@ -119,4 +119,8 @@ $LDSureToDeleteEntry='Are you sure you want to delete this entry?';
 /* 2003-03-18 EL */
 $LDChangeOnlyDept='Change the department';
 $LDCreateNursesList='Create Nurses List';
+
+$LDClose = 'Close';
+$LDBack = 'Back';
+$LDHelp = 'Help';
 ?>
