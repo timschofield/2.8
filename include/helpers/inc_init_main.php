@@ -12,13 +12,13 @@ $dbpassword='root';
 $dbhost='localhost';
 
 # First key used for simple chaining protection of scripts
-$key='7811371076400';
+$key='3.4490598255973E+26';
 
 # Second key used for accessing modules
-$key_2level='7619423922162';
+$key_2level='2.3096868388074E+28';
 
 # 3rd key for encrypting cookie information
-$key_login='46924924597506';
+$key_login='2.9647067937614E+28';
 
 # Main host address or domain
 $main_domain='localhost/gettext/care2002/care2x/branches/gettext/';

@@ -147,7 +147,6 @@ $smarty->assign('LDBack', $LDBack);
 ob_start();
 
 ?>
-
 <style type="text/css" name="formstyle">
 
 td.pblock{ font-family: verdana,arial; font-size: 12; background-color: #ffffff}
@@ -358,7 +357,7 @@ if($rows==1) {
 
 	# If no wards available, prompt no ward
 	
-	$sTemp = '<p><font size=2 face="verdana,arial,helvetica">'.$LDNoWardsYet.'<br><img '.createComIcon($root_path,'redpfeil.gif','0','absmiddle').'> <a href="nursing-ward-new.php'.URL_APPEND.'">'.$LDClk2CreateWard.'</a></font>';
+	$sTemp = $LDNoWardsYet;
 
 }
 

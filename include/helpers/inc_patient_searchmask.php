@@ -24,8 +24,7 @@ if(!isset($searchform_count) || !$searchform_count){
 			<td>
 
 			<form	method="post" name="searchform<?php if($searchform_count) echo "_".$searchform_count; ?>" onSubmit="return chkSearch(this)"
-				<?php if(isset($search_script) && $search_script!='') echo 'action="'.$search_script.'"'; ?>
-			>
+				<?php if(isset($search_script) && $search_script!='') echo 'action="'.$search_script.'"'; ?>>
 				&nbsp;
 				<br>
 				<?php echo $searchprompt ?>:
@@ -34,7 +33,10 @@ if(!isset($searchform_count) || !$searchform_count){
 <?php
 				if(defined('SHOW_FIRSTNAME_CONTROLLER')&&SHOW_FIRSTNAME_CONTROLLER){
 ?>
-				<input type="checkbox" name="firstname_too" <?php if(isset($firstname_too)&&$firstname_too) echo 'checked'; ?>> <?php echo $LDIncludeFirstName; ?><p>
+				<label>
+					<?php echo $LDIncludeFirstName; ?>
+					<input type="checkbox" name="firstname_too" <?php if(isset($firstname_too)&&$firstname_too) echo 'checked'; ?>> 
+				</label>
 <?php
 }
 ?>
