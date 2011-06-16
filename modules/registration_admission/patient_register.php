@@ -73,7 +73,7 @@ require('gui_bridge/default/gui_tabs_patreg.php');
 
 require_once($root_path.'modules/registration_admission/model/class_gui_input_person.php');
 
-$inperson = & new GuiInputPerson;
+$inperson = new GuiInputPerson;
 
 $inperson->setPID($pid);
 $inperson->pretext = $sTemp;
@@ -93,7 +93,7 @@ $sCancel.=URL_APPEND.'><img '.createLDImgSrc($root_path,'cancel.gif','0').' alt=
 
 $smarty->assign('pbCancel',$sCancel);
 
-$smarty->assign('sMainBlockIncludeFile','registration_admission/reg_input.tpl');
+$smarty->assign('sMainBlockIncludeFile',__DIR__ . '/view/reg_input.tpl');
 
 $smarty->display('common/mainframe.tpl');
 
