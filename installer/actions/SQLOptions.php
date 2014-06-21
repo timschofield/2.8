@@ -6,21 +6,21 @@
  * least the perform method overridden
  */
 class SQLOptions extends SQLFile {
-	
+
 	var $params_prepared = false;
-	var $file = "";	
+	var $file = "";
 
 	function SQLOptions($title, $params){
 		parent::BaseAction($title, $params);
-		
+
 		$this->interactive = true;
 		$this->grouping = true;
 	}
-	
+
 	/*
 	 * This function needs to be overriden in the implementing class
 	 * and should return either TRUE or FALSE.
-	 * 
+	 *
 	 * @var $params array Array of parameters needed for the specific implementation
 	 */
 	function perform(){
@@ -60,7 +60,7 @@ class SQLOptions extends SQLFile {
 			$this->loop = 2;
 			return $this->result;
 		}
-		
+
 		# Connect to the DB
 		$db = $this->connect();
 		if ($db === FALSE)
@@ -89,10 +89,10 @@ class SQLOptions extends SQLFile {
 			unset($this->file_list[$k]);
 		$this->file = "";
 
-		$this->loop = 1;	
+		$this->loop = 1;
 		return $this->result;
 	}
-		
+
 	function prepareParameters(){
 		if ($this->params_prepared) {
 			return true;
@@ -124,7 +124,7 @@ class SQLOptions extends SQLFile {
                                 $this->file_list[$pretty_name] = $file;
                         }
                 }
-		}	
+		}
 		$this->params_prepared = true;
 	}
 
@@ -134,9 +134,9 @@ class SQLOptions extends SQLFile {
                         return $this->result;
                 }
 
-		$smarty->assign("files",$this->file_list);	
+		$smarty->assign("files",$this->file_list);
 		$smarty->assign("loop",$this->loop);
-		$smarty->assign_by_ref('ACTION', $this);
+		$smarty->assignByRef('ACTION', $this);
                 if ($this->loop == 3) {
 			$es =& $GLOBALS['INSTALLER']['SMARTY'];
                 	$es->assign('HEADER_EXTRAS','<META HTTP-EQUIV=Refresh CONTENT="2; URL=install.php?save_action=true">');
@@ -159,7 +159,7 @@ class SQLOptions extends SQLFile {
 					}
 				if (array_search($_POST['optfile'], $this->file_list)) {
 					$this->file = $_POST['optfile'];
-					
+
 					$this->result = INSTALLER_ACTION_FAIL;
 					$this->result_message = "Installing File.";
 					return $this->result;
