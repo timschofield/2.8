@@ -33,7 +33,7 @@ class Field {
     function getHTML($smarty) {
         $smarty->assignByRef('field', $this);
         $output = $smarty->fetch(Installer::getTemplatePath("field_$this->type.tpl"));
-        $smarty->clear_assign('field');
+        $smarty->clearAssign('field');
 
         return $output;
     }

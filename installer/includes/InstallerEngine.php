@@ -76,7 +76,7 @@ class InstallerEngine {
 				$test->perform();
 				$smarty->assignByRef('test', $test);
 				$output .= $smarty->fetch(Installer::getTemplatePath('test_result.tpl'));
-				$smarty->clear_assign('test');
+				$smarty->clearAssign('test');
 			}
 			if($versions->testsComplete($this->old_version)){
 				$smarty->assign('CAN_CONTINUE', true);
@@ -96,7 +96,7 @@ class InstallerEngine {
 							$action->perform();
 							$smarty->assignByRef('ACTION', $action);
 							$action_html .= $smarty->fetch(Installer::getTemplatePath('action_complete.tpl'));
-							$smarty->clear_assign('ACTION');
+							$smarty->clearAssign('ACTION');
 						}
 					}
 				}
@@ -113,13 +113,13 @@ class InstallerEngine {
 							$action->perform();
 							$smarty->assignByRef('ACTION', $action);
 							$action_html .= $smarty->fetch(Installer::getTemplatePath('action_complete.tpl'));
-							$smarty->clear_assign('ACTION');
+							$smarty->clearAssign('ACTION');
 						}
 					}
 				}
 				$smarty->assign('ACTION_HTML', $action_html);
 				$output .= $smarty->fetch(Installer::getTemplatePath('actions.tpl'));
-				$smarty->clear_assign('ACTION_HTML');
+				$smarty->clearAssign('ACTION_HTML');
 
 				if($versions->actionsComplete($this->old_version)){
 					$smarty->assign('CAN_CONTINUE', true);
@@ -144,7 +144,7 @@ class InstallerEngine {
 						$action->perform();
 						$smarty->assignByRef('ACTION', $action);
 						$action_html .= $smarty->fetch(Installer::getTemplatePath('action_complete.tpl'));
-						$smarty->clear_assign('ACTION');
+						$smarty->clearAssign('ACTION');
 					}
 				}
 			}
@@ -160,7 +160,7 @@ class InstallerEngine {
 						$action->perform();
 						$smarty->assignByRef('ACTION', $action);
 						$action_html .= $smarty->fetch(Installer::getTemplatePath('action_complete.tpl'));
-						$smarty->clear_assign('ACTION');
+						$smarty->clearAssign('ACTION');
 					}
 				}
 			}
@@ -171,7 +171,7 @@ class InstallerEngine {
 			$this->action_title = $action->getTitle();
 			$smarty->assign('ACTION_HTML', $action_html);
 			$output .= $smarty->fetch(Installer::getTemplatePath('actions.tpl'));
-			$smarty->clear_assign('ACTION_HTML');
+			$smarty->clearAssign('ACTION_HTML');
 
 			if($versions->actionsComplete($this->old_version)){
 				$smarty->assign('CAN_CONTINUE', true);
@@ -184,7 +184,7 @@ class InstallerEngine {
 				$finalAction->perform();
 				$smarty->assignByRef('ACTION', $finalAction);
 				$output .= $smarty->fetch(Installer::getTemplatePath('action_complete.tpl'));
-				$smarty->clear_assign('ACTION');
+				$smarty->clearAssign('ACTION');
 			}
 
 			$output .= $smarty->fetch(Installer::getTemplatePath('finished.tpl'));
